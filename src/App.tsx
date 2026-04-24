@@ -1,8 +1,6 @@
 // import { useState } from 'react'
 
 function App() {
-
-  
   
   return (
     <div className="w-90 min-h-125 bg-white text-slate-800 antialiased font-sans dark:bg-[#242424] dark:text-white flex items-center justify-center">

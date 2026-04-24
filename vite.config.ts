@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite';
+import { resolve } from "path";
 
 export default defineConfig({
   plugins: [
@@ -12,11 +13,15 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: './index.html',
-        background: './src/background.ts',
+        background: resolve(__dirname, "src/background.ts"),
+        "content-scripts/read-page": resolve(
+          __dirname,
+          "src/content-scripts/read-page.ts"
+        ),
       },
       output: {
         entryFileNames: (chunkInfo) => {
-          return chunkInfo.name === 'background' ? 'background.js' : 'assets/[name]-[hash].js';
+          return chunkInfo.name === 'background' ? 'background.js' : '[name].js';
         },
       },
     },
