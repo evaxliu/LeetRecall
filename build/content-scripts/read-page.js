@@ -1,1 +1,0 @@
-chrome.runtime.onMessage.addListener(function(e,o,t){e.text==="report_back"&&t(document.documentElement.outerHTML)});function n(){var t;const e=document.querySelector('a[href^="/problems/"]'),o=((t=e==null?void 0:e.textContent)==null?void 0:t.trim())??null;return console.log("LeetCode problem title:",o),o}n();
